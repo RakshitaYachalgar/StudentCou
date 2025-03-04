@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>student registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1>Student Registration</h1>
+    <br />
+    <script>
+      function showAlert() {
+        alert("Registration is successful");
+      }
+    </script>
+    <label for="name">Student Name:</label>
+    <input type="text" id="name" />
+    <br />
+    <label for="fname">Father's Name:</label>
+    <input type="text" id="fname" />
+    <br />
+    <label for="mname">Mother's Name:</label>
+    <input type="text" id="mname" />
+    <br />
+    <label for="srn">SRN/USN:</label>
+    <input type="text" id="student_srn" onchange="verifysrn()" />
+    <br />
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male" />
+    <label for="male">Male</label><br />
+    <input type="radio" id="female" name="gender" value="Female" />
+    <label for="male">Female</label>
+    <br />
+    <label for="qualification">Qualification:</label>
+
+    <input type="checkbox" id="sslc" name="qualification" value="SSLC" />
+    <label for="sslc">SSLC</label><br />
+    <input type="checkbox" id="puc" name="qualification" value="PUC" />
+    <label for="puc">PUC</label><br />
+    <input type="checkbox" id="degree" name="qualification" value="Degree" />
+    <label for="degree">Degree</label><br />
+    <input type="checkbox" id="masters" name="qualification" value="Masters" />
+    <label for="masters">Masters</label><br />
+
+    <label for="Address">Address:</label>
+    <textarea id="address" cols="30" rows="5"></textarea><br />
+    <button type="submit" class="btn btn-primary" onclick="showAlert()">
+      Submit
+    </button>
+  </center>
+</body>
+
+</html>
+<script>
+  function verifysrn() {
+    var srn = document.getElementById("student_srn");
+    var re = /^\d{2}\w{2}\d{2}\w{3}\d{3}$/;
+    if (!re.test(srn.value)) {
+      alert("Invalid srn..! Kindly enter valid srn");
+      srn.focus();
+    } else {
+      alert("Valid srn number");
+    }
+  }
+</script>
